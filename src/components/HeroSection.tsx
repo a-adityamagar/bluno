@@ -15,12 +15,12 @@ const HeroSection: React.FC = () => {
         
         {/* Subtext */}
         <p className="text-white/80 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
-          We build intelligent web solutions, AI agents, and automation systems that help modern businesses streamline operations, boost efficiency, and scale with confidence.
+          We build intelligent web solutions, AI agents, and automation systems<br/> that help modern businesses streamline operations, boost efficiency,<br/> and scale with confidence.
         </p>
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-white text-indigo-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-200 shadow-lg">
+          <button className="bg-white text-indigo-900 px-8 py-4 rounded-full font-semibold hover:bg-transparent hover:text-white hover:border-2 ">
             BUILD WITH BLUNO
           </button>
           <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-200">

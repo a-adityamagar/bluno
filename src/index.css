@@ -141,3 +141,21 @@ a:focus-visible {
     line-height: 1.1;
   }
 }
+
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes wave-slow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(50px); }
+}
+@keyframes wave-medium {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-30px); }
+}
+@keyframes float-0 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes float-1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+@keyframes float-2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }

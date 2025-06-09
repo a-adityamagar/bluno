@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center h-16 rounded-lg bg-white backdrop-blur-md">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 cursor-pointer">
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
               <img src={Logo} alt="Logo" className="w-full h-full rounded-full object-cover" />
             </div>
