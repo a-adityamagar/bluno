@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../assests/logo.png';
+import Logo from '../assets/logo.png';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navigation: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-black hover:underline hover:underline-offset-4 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-black hover:underline hover:underline-offset-4 px-3 py-2 rounded-md text-lg font-medium transition-colors duration-200"
               >
                 {link.name}
               </a>
