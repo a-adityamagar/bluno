@@ -34,7 +34,7 @@ const Navigation = () => {
     <>
       {/* Navigation Bar */}
       <nav className="fixed top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 right-2 sm:right-3 md:right-4 z-50">
-        <div className="bg-white shadow-lg rounded-full px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 max-w-6xl mx-auto">
+        <div className="bg-white shadow-lg rounded-full px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-2 max-w-4xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
