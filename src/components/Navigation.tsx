@@ -6,9 +6,10 @@ const Navigation = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'Our Services', href: '#services' },
     { name: 'About Us', href: '#about' },
     { name: 'Contact Us', href: '#contact' },
-    { name: 'Portfolio', href: '#portfolio' },
+    
   ];
 
   // Prevent body scroll when menu is open

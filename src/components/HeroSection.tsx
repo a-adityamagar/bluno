@@ -1,11 +1,16 @@
 import React from 'react';
-import AnimatedBackground from './AnimatedBackground';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-12 sm:pt-14 md:pt-16 lg:pt-16" id="home">
-      <AnimatedBackground />
-      
+    <section 
+      className="relative min-h-screen bg-black text-white flex items-center justify-center pt-12 sm:pt-14 md:pt-16 lg:pt-16 overflow-hidden" 
+      id="home"
+    >
+      {/* Background decorative elements */}
+      <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 blur-xl animate-pulse-slow"></div>
+      <div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full opacity-15 blur-2xl animate-pulse-slow delay-1000"></div>
+      <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-full opacity-30 blur-xl animate-pulse-slow delay-2000"></div>
+
       {/* Centered content container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center">
         {/* Main heading */}
