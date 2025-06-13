@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center">
         {/* Main heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white [text-shadow:_2px_2px_0_rgb(0_0_0_/_50%)] leading-tight tracking-wide mb-4 sm:mb-5 md:mb-6 lg:mb-6">
-          Future-Ready Solutions for Modern Businesses
+          Future Ready Solutions for New and Modern Businesses
         </h1>
         
         {/* Subtext */}
