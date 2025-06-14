@@ -2,6 +2,7 @@ import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/Services';
 import PricingSection from './components/Planning';
+import FAQ from './components/Faq';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       {/* Hero Section */}
       <HeroSection />
       <ServicesSection/>
+      <FAQ/>
       <PricingSection/>
     </div>
   );

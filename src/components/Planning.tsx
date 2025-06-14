@@ -100,7 +100,7 @@ const PricingSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Plans Section */}
+        {/* Plans Section
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
@@ -141,7 +141,7 @@ const PricingSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

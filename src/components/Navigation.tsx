@@ -9,7 +9,6 @@ const Navigation = () => {
     { name: 'Our Services', href: '#services' },
     { name: 'About Us', href: '#about' },
     { name: 'Contact Us', href: '#contact' },
-    
   ];
 
   // Prevent body scroll when menu is open
@@ -35,14 +34,14 @@ const Navigation = () => {
     <>
       {/* Navigation Bar */}
       <nav className="fixed top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 right-2 sm:right-3 md:right-4 z-50">
-        <div className="bg-white shadow-lg rounded-full px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-2 max-w-4xl mx-auto">
+        <div className="bg-white/10 backdrop-blur-md shadow-lg rounded-full px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-2 max-w-4xl mx-auto border border-white/20">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
               <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center">
                 <img src={Logo} alt="Logo" className="w-full h-full rounded-full object-cover" />
               </div>
-              <span className="text-gray-900 font-bold text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide">
+              <span className="text-white font-bold text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide">
                 bluno tech
               </span>
             </div>
@@ -53,10 +52,10 @@ const Navigation = () => {
                 <a
                   key={index}
                   href={link.href}
-                  className="text-gray-900 transition-all duration-300 text-sm md:text-base lg:text-lg xl:text-xl font-medium relative group"
+                  className="text-white transition-all duration-300 text-sm md:text-base lg:text-lg xl:text-xl font-medium relative group"
                 >
                   {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const HeroSection: React.FC = () => {
   return (
     <section 
-      className="relative min-h-screen bg-black text-white flex items-center justify-center pt-12 sm:pt-14 md:pt-16 lg:pt-16 overflow-hidden" 
+      className="relative min-h-screen bg-gradient-to-b from-blue-950 to-black text-white flex items-center justify-center pt-12 sm:pt-14 md:pt-16 lg:pt-16 overflow-hidden" 
       id="home"
     >
       {/* Background decorative elements */}

@@ -61,12 +61,12 @@ const AnimatedBackground: React.FC = () => {
           height: 100%;
           background: linear-gradient(
             90deg,
-            #2E3440 0%,
-            #3F51B5 15%,
-            #9575CD 30%,
-            #FF7043 45%,
-            #4DD0E1 60%,
-            #2E3440 100%
+            #0A192F 0%,
+            #0A192F 15%,
+            #112240 30%,
+            #112240 45%,
+            #0A192F 60%,
+            #0A192F 100%
           );
           background-size: 200% 200%;
           animation: waveFlow1 var(--wave-speed-1) ease-in-out infinite;
@@ -78,11 +78,11 @@ const AnimatedBackground: React.FC = () => {
           height: 100%;
           background: linear-gradient(
             90deg,
-            #2E3440 0%,
-            #9575CD 20%,
-            #FF7043 40%,
-            #3F51B5 70%,
-            #2E3440 100%
+            #0A192F 0%,
+            #112240 20%,
+            #112240 40%,
+            #0A192F 70%,
+            #0A192F 100%
           );
           background-size: 250% 250%;
           animation: waveFlow2 var(--wave-speed-2) ease-in-out infinite;
@@ -96,11 +96,11 @@ const AnimatedBackground: React.FC = () => {
           height: 100%;
           background: linear-gradient(
             90deg,
-            #4DD0E1 0%,
-            #9575CD 25%,
-            #FF7043 50%,
-            #3F51B5 75%,
-            #2E3440 100%
+            #0A192F 0%,
+            #112240 25%,
+            #112240 50%,
+            #0A192F 75%,
+            #0A192F 100%
           );
           background-size: 300% 300%;
           animation: waveFlow3 var(--wave-speed-3) ease-in-out infinite;
