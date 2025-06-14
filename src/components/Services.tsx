@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Code, TrendingUp, ShoppingCart, Palette } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -32,6 +33,55 @@ const ServicesSection = () => {
       gridClass: "md:col-span-1 md:row-span-1"
     }
   ];
+
+  const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      serviceRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          const isVisible = rect.top >= 0 && rect.top < window.innerHeight * 0.75;
+          if (isVisible && !ref.classList.contains('animate')) {
+            setTimeout(() => {
+              ref.classList.add('animate');
+            }, index * 200); // Stagger animation by 200ms
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const styles = `
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate {
+        animation: slideDown 0.6s ease-out forwards;
+      }
+    `;
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.appendChild(document.createTextNode(styles));
+    document.head.appendChild(styleSheet);
+    return () => {
+      if (styleSheet.parentNode) {
+        styleSheet.parentNode.removeChild(styleSheet);
+      }
+    };
+  }, []);
 
   return (
     <section className="min-h-screen bg-black text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -68,9 +118,10 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.id}
+              ref={el => { serviceRefs.current[index] = el; }}
               className={`
                 ${service.gridClass}
                 ${service.isHighlighted 
@@ -78,7 +129,7 @@ const ServicesSection = () => {
                   : 'bg-gray-900/50 border border-gray-800 hover:border-gray-700'
                 }
                 rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:transform hover:scale-[1.02] cursor-pointer group
-                backdrop-blur-sm
+                backdrop-blur-sm opacity-0 translate-y-10
               `}
             >
               {/* Icon */}
@@ -108,7 +159,6 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
               </div>
-
             </div>
           ))}
         </div>
