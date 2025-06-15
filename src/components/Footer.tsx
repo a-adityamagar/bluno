@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   FaFacebook,
   FaInstagram,
@@ -132,16 +132,16 @@ const Footer = () => {
       <div ref={footerRef} className="container mx-auto px-6 relative z-10 footer-section">
         {/* Company Logo and Name */}
         <div className="flex items-center justify-center mb-12 group logo-section">
-          <div className="flex items-center space-x-4 transform transition-transform duration-300 hover:scale-105">
+          <div className="flex items-center space-x-4 ">
             <div className="relative">
               <img 
                 src={logo} 
-                className="w-16 h-16 rounded-full border-2 border-transparent shadow-lg hover:border-blue-400/50 transition-all duration-300"
+                className="w-16 h-16 rounded-full border-2 border-transparent shadow-lg"
                 alt="Bluno Tech Logo"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-full "></div>
             </div>
-            <h1 className="text-4xl font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors duration-300">
+            <h1 className="text-4xl font-bold text-white tracking-wide ">
               BLUNO TECH
             </h1>
           </div>
