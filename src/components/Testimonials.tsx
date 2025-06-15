@@ -26,11 +26,15 @@ const Testimonial = () => {
     },
   ];
 
+  // Duplicate testimonials for infinite loop
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const autoSlideTimeout = useRef<NodeJS.Timeout | null>(null);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
   const slideWidth = 100;
 
@@ -40,7 +44,7 @@ const Testimonial = () => {
       ([entry]) => {
         setIsSectionVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.5 } 
     );
 
     if (sectionRef.current) {
@@ -54,20 +58,16 @@ const Testimonial = () => {
     };
   }, []);
 
-  // Auto slide only when section is visible
+  // Auto slide when section gets in viewport
   useEffect(() => {
-    const startAutoSlide = () => {
-      if (isSectionVisible && !autoSlideTimeout.current) {
-        autoSlideTimeout.current = setTimeout(() => {
-          setCurrentIndex((prevIndex) =>
-            prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-          );
-        }, Math.floor(Math.random() * 1000) + 4000); // 4-5 seconds
-      }
-    };
-
     if (isSectionVisible) {
-      startAutoSlide();
+      if (autoSlideTimeout.current) {
+        clearTimeout(autoSlideTimeout.current);
+      }
+      
+      autoSlideTimeout.current = setTimeout(() => {
+        moveToNext();
+      }, Math.floor(Math.random() * 1000) + 3000); // 3-4 seconds
     } else if (autoSlideTimeout.current) {
       clearTimeout(autoSlideTimeout.current);
       autoSlideTimeout.current = null;
@@ -77,35 +77,72 @@ const Testimonial = () => {
     return () => {
       if (autoSlideTimeout.current) {
         clearTimeout(autoSlideTimeout.current);
+        autoSlideTimeout.current = null;
       }
     };
-  }, [currentIndex, testimonials.length, isSectionVisible]);
+  }, [currentIndex, isSectionVisible]);
+
+  const moveToNext = () => {
+    setIsTransitioning(true);
+    setCurrentIndex(prevIndex => prevIndex + 1);
+  };
+
+  const moveToPrev = () => {
+    if (currentIndex === 0) {
+      // Jump to the last duplicate without transition
+      setIsTransitioning(false);
+      setCurrentIndex(testimonials.length);
+      // Then move to the previous slide with transition
+      setTimeout(() => {
+        setIsTransitioning(true);
+        setCurrentIndex(testimonials.length - 1);
+      }, 10);
+    } else {
+      setIsTransitioning(true);
+      setCurrentIndex(prevIndex => prevIndex - 1);
+    }
+  };
+
+  // Handle infinite loop reset
+  useEffect(() => {
+    if (currentIndex === testimonials.length) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(0);
+        // Immediately re-enable transitions for the next slide
+        setTimeout(() => {
+          setIsTransitioning(true);
+        }, 10);
+      }, 500); 
+      
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, testimonials.length]);
 
   // Reset auto slide when manually sliding
   const handleSlide = (direction: "left" | "right") => {
     if (autoSlideTimeout.current) {
       clearTimeout(autoSlideTimeout.current);
+      autoSlideTimeout.current = null;
     }
-    setCurrentIndex((prevIndex) =>
-      direction === "left"
-        ? prevIndex === 0
-          ? testimonials.length - 1
-          : prevIndex - 1
-        : prevIndex === testimonials.length - 1
-        ? 0
-        : prevIndex + 1
-    );
+    
+    if (direction === "right") {
+      moveToNext();
+    } else {
+      moveToPrev();
+    }
+    
+    // Restart auto slide after manual interaction
     if (isSectionVisible) {
-      startAutoSlide();
+      setTimeout(() => {
+        if (autoSlideTimeout.current) {
+          clearTimeout(autoSlideTimeout.current);
+        }
+        autoSlideTimeout.current = setTimeout(() => {
+          moveToNext();
+        }, Math.floor(Math.random() * 1000) + 6000);
+      }, 100);
     }
-  };
-
-  const startAutoSlide = () => {
-    autoSlideTimeout.current = setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-      );
-    }, Math.floor(Math.random() * 1000) + 6000);
   };
 
   // Scroll-triggered appearance
@@ -177,12 +214,12 @@ const Testimonial = () => {
         {/* Testimonial Slider */}
         <div ref={sliderRef} className="relative overflow-hidden opacity-0 translate-y-10">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
+            className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
             style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
           >
-            {testimonials.map((testimonial) => (
+            {duplicatedTestimonials.map((testimonial, index) => (
               <div
-                key={testimonial.id}
+                key={`${testimonial.id}-${index}`}
                 className="w-full flex-shrink-0 p-6 lg:p-8"
               >
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 lg:p-10 text-white relative max-w-4xl mx-auto">
