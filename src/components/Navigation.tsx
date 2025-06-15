@@ -34,10 +34,10 @@ const Navigation = () => {
     <>
       {/* Navigation Bar */}
       <nav className="fixed top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 right-2 sm:right-3 md:right-4 z-50">
-        <div className="bg-white/10 backdrop-blur-md shadow-lg rounded-full px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-2 max-w-4xl mx-auto border border-white/20">
+        <div className="bg-white/10 backdrop-blur-md shadow-lg rounded-full pl-1 sm:pl-1.5 md:pl-2 lg:pl-3 pr-4 sm:pr-6 md:pr-8 lg:pr-10 py-2 sm:py-3 md:py-2 max-w-4xl mx-auto border border-white/20">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
+            <div className="flex items-center space-x-0.5 sm:space-x-1 md:space-x-1.5">
               <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center">
                 <img src={Logo} alt="Logo" className="w-full h-full rounded-full object-cover" />
               </div>
