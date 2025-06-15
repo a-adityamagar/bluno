@@ -1,16 +1,22 @@
-import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // Refs for scroll animations
+  const titleRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -18,49 +24,176 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://getform.io/f/ajjodkwa', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("https://getform.io/f/ajjodkwa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        console.log('Form submitted successfully:', formData);
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        console.log("Form submitted successfully:", formData);
+        setFormData({ name: "", email: "", phone: "", message: "" });
         setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000); // Hide message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        console.error('Form submission failed');
+        console.error("Form submission failed");
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     }
   };
+
+  // Handle scroll animations
+  useEffect(() => {
+    const handleScroll = () => {
+      // Animate title
+      if (titleRef.current) {
+        const rect = titleRef.current.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.top < window.innerHeight * 0.75;
+        if (isVisible && !titleRef.current.classList.contains("animate")) {
+          titleRef.current.classList.add("animate");
+        }
+      }
+
+      // Animate form with delay
+      if (formRef.current) {
+        const rect = formRef.current.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.top < window.innerHeight * 0.75;
+        if (isVisible && !formRef.current.classList.contains("animate")) {
+          setTimeout(() => {
+            formRef.current?.classList.add("animate");
+          }, 200);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Add animation styles
+  useEffect(() => {
+    const styles = `
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .contact-title {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      
+      .contact-title.animate {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+      
+      .contact-form {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      
+      .contact-form.animate {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+      
+      .form-field {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      
+      .contact-form.animate .form-field {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      
+      .contact-form.animate .form-field:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      
+      .contact-form.animate .form-field:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      
+      .contact-form.animate .form-field:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      
+      .contact-form.animate .form-field:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      
+      .contact-form.animate .form-button {
+        animation: fadeInUp 0.6s ease-out forwards;
+        animation-delay: 0.5s;
+      }
+      
+      .form-button {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    `;
+
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.appendChild(document.createTextNode(styles));
+    document.head.appendChild(styleSheet);
+
+    return () => {
+      if (styleSheet.parentNode) {
+        styleSheet.parentNode.removeChild(styleSheet);
+      }
+    };
+  }, []);
 
   return (
     <section
       id="contact"
       className="relative min-h-screen bg-gradient-to-b from-blue-950 to-black text-white overflow-hidden"
     >
-      {/* Background decorative elements - moved to left side */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full opacity-10 sm:top-10 sm:left-10 md:top-16 md:left-16 lg:top-20 lg:left-20"></div>
-      <div className="absolute top-40 left-40 w-4 h-4 bg-white rounded-full opacity-30 sm:hidden md:top-32 md:left-32 lg:top-40 lg:left-40"></div>
-      <div className="absolute top-60 left-60 w-2 h-2 bg-white rounded-full opacity-50 sm:hidden md:top-48 md:left-48 lg:top-60 lg:left-60"></div>
-
       <div className="flex min-h-screen flex-col md:flex-row">
         {/* Left Side - Let's Get in Touch */}
         <div className="flex-1 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-0">
-          <div className="max-w-lg">
+          <div ref={titleRef} className="contact-title max-w-lg">
             <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight mb-4 sm:mb-6 md:mb-8 tracking-wide">
-              LET'S<br />
+              LET'S
+              <br />
               <span className="block">GET IN</span>
-              <span className="block">TOUCH</span>
+              <span className="block">TOUCH<span className="inline-block text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white ml-2">.</span></span>
             </h1>
           </div>
         </div>
 
         {/* Right Side - Contact Form */}
         <div className="flex-1 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-0">
-          <div className="w-full max-w-md">
+          <div ref={formRef} className="contact-form w-full max-w-md">
             {isSubmitted ? (
               <div className="text-center py-8">
                 <h2 className="text-2xl sm:text-3xl font-light text-green-400 mb-4">
@@ -72,8 +205,11 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-                <div className="relative">
-                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2">
+                <div className="form-field relative">
+                  <label
+                    htmlFor="name"
+                    className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2"
+                  >
                     Full Name *
                   </label>
                   <input
@@ -87,9 +223,12 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="form-field grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="relative">
-                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2"
+                    >
                       Email *
                     </label>
                     <input
@@ -104,7 +243,10 @@ const Contact = () => {
                   </div>
 
                   <div className="relative">
-                    <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2"
+                    >
                       Phone
                     </label>
                     <input
@@ -118,8 +260,11 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="relative">
-                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2">
+                <div className="form-field relative">
+                  <label
+                    htmlFor="message"
+                    className="block text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider mb-1 sm:mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -133,12 +278,14 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <div className="flex justify-end pt-4 sm:pt-6">
+                <div className="form-button flex justify-end pt-4 sm:pt-6">
                   <button
                     type="submit"
                     className="group flex items-center space-x-2 sm:space-x-3 text-white hover:text-gray-300 transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg font-light">Send Message</span>
+                    <span className="text-base sm:text-lg font-light">
+                      Send Message
+                    </span>
                     <div className="w-10 sm:w-12 h-10 sm:h-12 border border-white rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-gray-900 transition-all duration-300">
                       <ArrowRight className="w-4 sm:w-5" />
                     </div>
