@@ -63,7 +63,7 @@ const Navigation = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-gray-900 transition-colors duration-200 p-1 sm:p-2"
+              className="lg:hidden text-white transition-colors duration-200 p-1 sm:p-2"
               aria-label="Toggle menu"
             >
               <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex flex-col justify-center items-center">
