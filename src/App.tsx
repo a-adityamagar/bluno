@@ -5,6 +5,7 @@ import PricingSection from './components/Planning';
 import FAQ from './components/Faq';
 import Testimonial from './components/Testimonials';
 import Footer from './components/Footer';
+import Contact from './components/Contactform';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <FAQ/>
       <Testimonial/>
       <PricingSection/>
+      <Contact/>
       <Footer/>
     </div>
   );

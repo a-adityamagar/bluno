@@ -25,16 +25,16 @@ const Footer = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Company Logo and Name */}
         <div className="flex items-center justify-center mb-12 group">
-          <div className="flex items-center space-x-4 transform transition-transform duration-300 group-hover:scale-105">
+          <div className="flex items-center space-x-4 transform transition-transform duration-300 ">
             <div className="relative">
               <img 
                 src={logo} 
-                className="w-16 h-16 rounded-full border-2 border-transparent group-hover:border-blue-400 transition-all duration-300 shadow-lg"
+                className="w-16 h-16 rounded-full border-2 border-transparent shadow-lg"
                 alt="Bluno Tech Logo"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 "></div>
             </div>
-            <h1 className="text-4xl font-bold text-white tracking-wide group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+            <h1 className="text-4xl font-bold text-white tracking-wide  ">
               BLUNO TECH
             </h1>
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
