@@ -26,7 +26,7 @@ const PricingSection: React.FC = () => {
         "5 custom pages (Home, About, Services, Blog, Contact)",
         "Lead capture integration + basic blog setup",
         "SEO, performance & mobile optimized", 
-        "2 times maintenance",
+        "Upto 3 times maintenance for one year",
         "$30 for extra page ($50 for 3 pages)"
       ],
       popular: true
