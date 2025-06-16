@@ -173,9 +173,9 @@ const Footer = () => {
         <div className="flex items-center justify-center space-x-6 mb-12 social-section">
           {[
             { Icon: FaFacebook, href: "https://facebook.com", color: "hover:bg-blue-600" },
-            { Icon: FaInstagram, href: "https://instagram.com", color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500" },
-            { Icon: FaTwitter, href: "https://twitter.com", color: "hover:bg-blue-400" },
-            { Icon: FaTiktok, href: "https://tiktok.com", color: "hover:bg-gray-800" },
+            { Icon: FaInstagram, href: "https://www.instagram.com/blunotech/", color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500" },
+            { Icon: FaTwitter, href: "https://x.com/BlunoTech", color: "hover:bg-blue-400" },
+            { Icon: FaTiktok, href: "https://www.tiktok.com/@blunotech", color: "hover:bg-gray-800" },
             { Icon: FaLinkedin, href: "https://linkedin.com", color: "hover:bg-blue-700" }
           ].map(({ Icon, href, color }, index) => (
             <a
