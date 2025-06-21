@@ -84,7 +84,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-black text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="min-h-screen bg-black text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden " id="services">
       {/* Background decorative elements */}
       <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 blur-xl"></div>
       <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full opacity-15 blur-2xl"></div>

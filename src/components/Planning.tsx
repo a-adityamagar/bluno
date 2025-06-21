@@ -135,7 +135,7 @@ const PricingSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b to-blue-950 from-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section className="min-h-screen bg-gradient-to-b to-blue-950 from-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative" id= "pricing">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div 

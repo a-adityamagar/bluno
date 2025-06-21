@@ -151,10 +151,10 @@ const Footer = () => {
         <div className="flex items-center justify-center mb-12 nav-section">
           <nav className="flex flex-wrap justify-center gap-8 lg:gap-12">
             {[
-              { href: "/", label: "HOME" },
-              { href: "/about", label: "ABOUT US" },
-              { href: "/services", label: "SERVICES" },
-              { href: "/contact", label: "CONTACT US" }
+              { href: "#home", label: "HOME" },
+              { href: "#services", label: "SERVICES" },
+              { href: "#pricing", label: "PRICING" },
+              { href: "#contact", label: "CONTACT" }
             ].map((link, index) => (
               <a
                 key={link.label}
@@ -176,7 +176,7 @@ const Footer = () => {
             { Icon: FaInstagram, href: "https://www.instagram.com/blunotech/", color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500" },
             { Icon: FaTwitter, href: "https://x.com/BlunoTech", color: "hover:bg-blue-400" },
             { Icon: FaTiktok, href: "https://www.tiktok.com/@blunotech", color: "hover:bg-gray-800" },
-            { Icon: FaLinkedin, href: "https://linkedin.com", color: "hover:bg-blue-700" }
+            { Icon: FaLinkedin, href: "https://www.linkedin.com/company/bluno-tech", color: "hover:bg-blue-700" }
           ].map(({ Icon, href, color }, index) => (
             <a
               key={index}

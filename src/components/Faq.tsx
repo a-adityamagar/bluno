@@ -1,52 +1,61 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 const FAQ = () => {
   const faqs = [
     {
       id: 1,
       question: "How do I get started?",
-      answer: "- Choose a plan that fits your business needs and complete payment upfront.\n- Fill out a short form to share your business details and vision.\n- Our team will handle the rest, keeping you updated throughout the process!"
+      answer:
+        "- Choose a plan that fits your business needs and complete payment upfront.\n- Fill out a short form to share your business details and vision.\n- Our team will handle the rest, keeping you updated throughout the process!",
     },
     {
       id: 2,
       question: "How long does it take to deliver results?",
-      answer: "The first steps of your solution will be ready in 5 business days after receiving your project details. Depending on the plan, the full solution will be implemented within 10 business days."
+      answer:
+        "The first steps of your solution will be ready in 5 business days after receiving your project details. Depending on the plan, the full solution will be implemented within 10 business days.",
     },
     {
       id: 3,
       question: "Can I upgrade my plan later?",
-      answer: "Absolutely! Everything changes, and we want to be flexible too. Please contact us at blunotech@gmail.com."
+      answer:
+        "Absolutely! Everything changes, and we want to be flexible too. Please contact us at blunotech@gmail.com.",
     },
     {
       id: 4,
       question: "Do I need technical knowledge to use your solutions?",
-      answer: "Not at all. All our solutions are designed to be user-friendly, with ongoing support to ensure a seamless experience for you and your team."
+      answer:
+        "Not at all. All our solutions are designed to be user-friendly, with ongoing support to ensure a seamless experience for you and your team.",
     },
     {
       id: 5,
       question: "How do I provide details about my business and vision?",
-      answer: "For most packages, we'll guide you through a short and user-friendly form. For custom plans, our team will work closely with you to collect all the necessary information about your business and goals."
+      answer:
+        "For most packages, we'll guide you through a short and user-friendly form. For custom plans, our team will work closely with you to collect all the necessary information about your business and goals.",
     },
     {
       id: 6,
       question: "Can I manage or edit the solution myself later?",
-      answer: "No, our solution is hosted on our proprietary AI automation platform. If you cancel the service, the automation will be deactivated."
+      answer:
+        "No, our solution is hosted on our proprietary AI automation platform. If you cancel the service, the automation will be deactivated.",
     },
     {
       id: 7,
       question: "What if I'm not satisfied?",
-      answer: "We are committed to delivering measurable results, including improving a key business metric to ensure the value of our solutions. However, due to the nature of our work, refunds are not available."
+      answer:
+        "We are committed to delivering measurable results, including improving a key business metric to ensure the value of our solutions. However, due to the nature of our work, refunds are not available.",
     },
     {
       id: 8,
       question: "Why should I choose your agency?",
-      answer: "We're faster, more affordable, and more efficient than hiring separate business analysts, developers, or using other platforms. Our expert-driven approach ensures your automation solutions are tailored to your specific business needs."
+      answer:
+        "We're faster, more affordable, and more efficient than hiring separate business analysts, developers, or using other platforms. Our expert-driven approach ensures your automation solutions are tailored to your specific business needs.",
     },
     {
       id: 9,
       question: "What kind of businesses benefit most from your services?",
-      answer: "Choose a plan that fits your business needs and complete payment upfront. - Fill out a short form to share your business details and vision. - Our team will handle the rest, keeping you updated throughout the process!"
-    }
+      answer:
+        "Choose a plan that fits your business needs and complete payment upfront. - Fill out a short form to share your business details and vision. - Our team will handle the rest, keeping you updated throughout the process!",
+    },
   ];
 
   const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -56,19 +65,20 @@ const FAQ = () => {
       faqRefs.current.forEach((ref, index) => {
         if (ref) {
           const rect = ref.getBoundingClientRect();
-          const isVisible = rect.top >= 0 && rect.top < window.innerHeight * 0.75;
-          if (isVisible && !ref.classList.contains('animate')) {
+          const isVisible =
+            rect.top >= 0 && rect.top < window.innerHeight * 0.75;
+          if (isVisible && !ref.classList.contains("animate")) {
             setTimeout(() => {
-              ref.classList.add('animate');
+              ref.classList.add("animate");
             }, index * 200); // Stagger animation by 200ms
           }
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -99,8 +109,8 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section 
-      className="relative min-h-screen bg-gradient-to-b from-black to-blue-950  text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" 
+    <section
+      className="relative min-h-screen bg-gradient-to-b from-black to-blue-950  text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
       id="faq"
     >
       {/* Background decorative elements */}
@@ -116,20 +126,36 @@ const FAQ = () => {
               FAQ
             </h2>
             <p className="text-gray-400 text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed">
-              Find answers to the most common questions about our AI automation and low-code solutions.
+              Find answers to the most common questions about our AI automation
+              and low-code solutions.
             </p>
           </div>
-          
+
           {/* Contact Us Button */}
           <div className="flex-shrink-0 lg:mt-4">
-            <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 group">
+            <a
+              href="https://tally.so/r/nWkG0j"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 group"
+            >
               Contact us
               <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-3 h-3 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </div>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -138,7 +164,9 @@ const FAQ = () => {
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              ref={el => { faqRefs.current[faq.id - 1] = el; }}
+              ref={(el) => {
+                faqRefs.current[faq.id - 1] = el;
+              }}
               className="
                 md:col-span-1 md:row-span-1
                 bg-gray-900/50 border border-gray-800 hover:border-gray-700 rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:transform hover:scale-[1.02] cursor-pointer group backdrop-blur-sm opacity-0 translate-y-10
