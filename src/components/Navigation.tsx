@@ -25,13 +25,18 @@ const Navigation = () => {
       // Show the navbar
       setIsVisible(true);
       
-      // Set a new timeout to hide the navbar after 3 seconds of inactivity
-      timeoutId = window.setTimeout(() => {
-        // Don't hide if menu is open
-        if (!isMenuOpen) {
-          setIsVisible(false);
-        }
-      }, 3000);
+      // Check if user is in the hero section (scroll position near top)
+      const isInHeroSection = window.scrollY < 100; // Adjust threshold as needed
+      
+      // Set a new timeout to hide the navbar after 3 seconds of inactivity, but only if not in hero section
+      if (!isInHeroSection && !isMenuOpen) {
+        timeoutId = window.setTimeout(() => {
+          // Don't hide if menu is open
+          if (!isMenuOpen) {
+            setIsVisible(false);
+          }
+        }, 3000);
+      }
     };
 
     // Add event listeners for user activity
