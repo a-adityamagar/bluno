@@ -6,16 +6,16 @@ const Testimonial = () => {
     {
       id: 1,
       quote:
-        "Working with Faiz Anwar's Team has been an absolute pleasure. They are incredibly knowledgeable and passionate about what they do, and it really shows in the results they deliver.",
-      author: "Lucia Ortiz",
-      title: "Co-Founder at XYZ",
+        "Working with Bluno Tech Team has been an absolute pleasure. They are incredibly passionate about what they do, and it really shows in the results they deliver.",
+      author: "SURAMVEER",
+      title: "CEO at SBIPL Project ltd. ",
     },
     {
       id: 2,
       quote:
         "The team's dedication to excellence is unmatched. Their solutions transformed our business operations seamlessly. Their solutions transformed our business operations seamlessly.",
-      author: "John Doe",
-      title: "CEO at ABC Corp",
+      author: "Dewraj Koirala",
+      title: "Founder of Startupgenic",
     },
     {
       id: 3,
