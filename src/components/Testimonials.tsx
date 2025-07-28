@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import logo from "../assets/logo.png";
 import startup from "../assets/startup.png";
+import sbipl from "../assets/SBIPL.png";
 
 const Testimonial = () => {
   const testimonials = [
@@ -10,12 +11,12 @@ const Testimonial = () => {
         "Working with Bluno Tech Team has been an absolute pleasure. They are incredibly passionate about what they do, and it really shows in the results they deliver.",
       author: "SURAMVEER",
       title: "CEO at SBIPL Project ltd. ",
-      logo: logo,
+      logo: sbipl,
     },
     {
       id: 2,
       quote:
-        "The Bluno Tech Team's unparalleled dedication to excellence has revolutionized our business operations with seamless, transformative solutions that exceed all expectations.",
+        "The Bluno Tech Team's exceptional commitment shines through, delivering flawless solutions that elevate our business effortlessly.",
       author: "Debyaraj Koirala",
       title: "Founder of Startupgenic",
       logo: startup,
