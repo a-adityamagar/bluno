@@ -10,7 +10,7 @@ const Testimonial = () => {
         "Working with Bluno Tech Team has been an absolute pleasure. They are incredibly passionate about what they do, and it really shows in the results they deliver.",
       author: "SURAMVEER",
       title: "CEO at SBIPL Project ltd. ",
-      logo: "../assets/logo.png",
+      logo: logo,
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const Testimonial = () => {
         "A fantastic experience! The support and expertise provided were beyond our expectations.Their solutions transformed our business operations seamlessly.",
       author: "Jane Smith",
       title: "CTO at Tech Innovations",
-      logo: "../assets/logo.png",
+      logo: "logo",
     },
   ];
 
