@@ -8,7 +8,7 @@ const Testimonial = () => {
     {
       id: 1,
       quote:
-        "Working with Bluno Tech Team has been an absolute pleasure. They are incredibly passionate about what they do, and it really shows in the results they deliver.",
+        "Partnering with Bluno Tech Team has been a construction delight to align with SBIPL's construction focus and maintain a positive tone.",
       author: "SURAMVEER",
       title: "CEO at SBIPL Project ltd. ",
       logo: sbipl,
@@ -24,7 +24,7 @@ const Testimonial = () => {
     {
       id: 3,
       quote:
-        "A fantastic experience! The support and expertise provided were beyond our expectations.Their solutions transformed our business operations seamlessly.",
+        "Collaborating with Bluno Tech Team has been a game-changer. Their relentless drive for quality crafts outstanding solutions for us.",
       author: "Jane Smith",
       title: "CTO at Tech Innovations",
       logo: "logo",
