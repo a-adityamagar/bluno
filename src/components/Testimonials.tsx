@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import logo from "../assets/logo.png";
+import startup from "../assets/startup.png";
 
 const Testimonial = () => {
   const testimonials = [
@@ -9,13 +10,15 @@ const Testimonial = () => {
         "Working with Bluno Tech Team has been an absolute pleasure. They are incredibly passionate about what they do, and it really shows in the results they deliver.",
       author: "SURAMVEER",
       title: "CEO at SBIPL Project ltd. ",
+      logo: "../assets/logo.png",
     },
     {
       id: 2,
       quote:
-        "The team's dedication to excellence is unmatched. Their solutions transformed our business operations seamlessly. Their solutions transformed our business operations seamlessly.",
-      author: "Dewraj Koirala",
+        "The Bluno Tech Team's unparalleled dedication to excellence has revolutionized our business operations with seamless, transformative solutions that exceed all expectations.",
+      author: "Debyaraj Koirala",
       title: "Founder of Startupgenic",
+      logo: startup,
     },
     {
       id: 3,
@@ -23,6 +26,7 @@ const Testimonial = () => {
         "A fantastic experience! The support and expertise provided were beyond our expectations.Their solutions transformed our business operations seamlessly.",
       author: "Jane Smith",
       title: "CTO at Tech Innovations",
+      logo: "../assets/logo.png",
     },
   ];
 
@@ -227,9 +231,9 @@ const Testimonial = () => {
                   <div className="absolute -top-8 left-8">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center border-4 border-white/20 shadow-lg">
                       <img
-                        src={logo}
+                        src={testimonial.logo}
                         className="rounded-full"
-                        alt="owner"
+                        alt={`${testimonial.author} company logo`}
                       />
                     </div>
                   </div>
