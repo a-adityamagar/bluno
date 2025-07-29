@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import logo from "../assets/logo.png";
 import startup from "../assets/startup.png";
 import sbipl from "../assets/SBIPL.png";
+import gurkha from "../assets/gurkha.png";
 
 const Testimonial = () => {
   const testimonials = [
@@ -25,9 +26,9 @@ const Testimonial = () => {
       id: 3,
       quote:
         "Collaborating with Bluno Tech Team has been a game-changer. Their relentless drive for quality crafts outstanding solutions for us.",
-      author: "Jane Smith",
-      title: "CTO at Tech Innovations",
-      logo: "logo",
+      author: "Arjun Satyal",
+      title: "Owner of The GUrkha Khukuri",
+      logo: gurkha,
     },
   ];
 
