@@ -27,7 +27,7 @@ const ServicesSection = () => {
     },
     {
   id: 4,
-  title: "AI CHATBOT",
+  title: "AI CHATBOT INTEGRATION",
   description: "Intelligent AI chatbot integration to provide instant, 24/7 customer support, improve engagement, and automate common queries for better user experience.",
   icon: <MessageSquare className="w-8 h-8" />,
   gridClass: "md:col-span-1 md:row-span-1"
@@ -45,7 +45,7 @@ const ServicesSection = () => {
           if (isVisible && !ref.classList.contains('animate')) {
             setTimeout(() => {
               ref.classList.add('animate');
-            }, index * 200); // Stagger animation by 200ms
+            }, index * 200); 
           }
         }
       });

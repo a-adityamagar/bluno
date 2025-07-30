@@ -7,15 +7,20 @@ const PricingSection: React.FC = () => {
 
   const packages = [
     {
-      name: "Starter Site",
-      price: "$299",
+      name: "Foundational Package",
+      price: "$499",
       description: "Perfect for small businesses getting started",
       features: [
-        "1-page responsive landing site",
-        "Copywriting assistance + lead form integration", 
-        "Turnaround in 5-7 days",
-        "$30 for extra page ($50 for 3 pages)",
-        "Custom Domain Free"
+        "1-6 static pages (Home, About Us, Services, Contact, Gallery)",
+        "Responsive design (mobile-friendly)",
+        "Basic contact form",
+        "Social media integration",
+        "Google Map integration",
+        "Domain registration ( .com etc. at market rate)",
+        "Basic web hosting (e.g., 500MB) for 1 year",
+        "Basic SEO setup (title tags, meta descriptions)",
+        "1-2 rounds of revisions",
+        "$20 for extra page ($50 for 3 pages)"
       ]
     },
     {
