@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Code, TrendingUp, ShoppingCart, Palette } from 'lucide-react';
+import { Code, TrendingUp, MessageSquare, Palette } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
@@ -12,8 +12,8 @@ const ServicesSection = () => {
     },
     {
       id: 2,
-      title: "DIGITAL MARKETING STRATEGIES",
-      description: "Comprehensive digital campaigns designed to increase your online presence and drive meaningful engagement across all platforms.",
+      title: "SEARCH ENGINE OPTIMIZATION",
+      description: "Boost your website’s visibility with our expert SEO services, designed to drive organic traffic and increase conversions. We help you rank higher, attract the right audience, and grow your business online.",
       icon: <TrendingUp className="w-8 h-8" />,
       gridClass: "md:col-span-2 md:row-span-1"
     },
@@ -26,11 +26,11 @@ const ServicesSection = () => {
       isHighlighted: true
     },
     {
-      id: 4,
-      title: "E-COMMERCE",
-      description: "Robust online retail experiences with seamless payment integration, inventory management, and user-friendly interfaces for the digital marketplace.",
-      icon: <ShoppingCart className="w-8 h-8" />,
-      gridClass: "md:col-span-1 md:row-span-1"
+  id: 4,
+  title: "AI CHATBOT",
+  description: "Intelligent AI chatbot integration to provide instant, 24/7 customer support, improve engagement, and automate common queries for better user experience.",
+  icon: <MessageSquare className="w-8 h-8" />,
+  gridClass: "md:col-span-1 md:row-span-1"
     }
   ];
 
