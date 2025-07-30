@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Check } from 'lucide-react';
+import React, { useEffect, useRef } from "react";
+import { Check } from "lucide-react";
 
 const PricingSection: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -11,43 +11,51 @@ const PricingSection: React.FC = () => {
       price: "$499",
       description: "Perfect for small businesses getting started",
       features: [
-        "1-6 static pages (Home, About Us, Services, Contact, Gallery)",
+        "1-6 static pages (Home, About, Services, Contact)",
         "Responsive design (mobile-friendly)",
         "Basic contact form",
-        "Social media integration",
         "Google Map integration",
         "Domain registration ( .com etc. at market rate)",
         "Basic web hosting (e.g., 500MB) for 1 year",
         "Basic SEO setup (title tags, meta descriptions)",
         "1-2 rounds of revisions",
-        "$20 for extra page ($50 for 3 pages)"
-      ]
+        "$20 for extra page ($50 for 3 pages)",
+      ],
     },
     {
-      name: "Business Boost", 
+      name: "Business Boost",
       price: "$899",
       description: "Complete solution for growing businesses",
       features: [
-        "5 custom pages (Home, About, Services, Blog, Contact)",
-        "Lead capture integration + basic blog setup",
-        "SEO, performance & mobile optimized", 
-        "Upto 3 times maintenance for one year",
-        "$30 for extra page ($50 for 3 pages)"
+        "Up to 8-15 pages",
+        "Responsive design",
+        "CMS integration easy content management",
+        "Advanced contact forms",
+        "Image gallery/portfolio",
+        "Blog section",
+        "Basic analytics setup (Google Analytics)",
+        "Basic on-page SEO optimization",
+        "3-4 rounds of revisions",
+        "Short training session for CMS(Content Management System) usage",
       ],
-      popular: true
+      popular: true,
     },
     {
       name: "Personal Brand Kit",
       price: "Custom",
       description: "Tailored for professionals and creators",
       features: [
+        "Website audit",
         "Portfolio for devs, creators, and freelancers",
         "Resume + case studies + contact form",
         "Clean, fast, and shareable layout",
-        "Custom branding elements",
-        "Professional optimization"
-      ]
-    }
+        "Advanced ai chatbot for instant support",
+        "Advanced Search Engine Optimization",
+        "3-4 rounds of revisions",
+        "Training session for CMS(Content Management System) usage",
+
+      ],
+    },
   ];
 
   // Handle scroll animations
@@ -57,8 +65,8 @@ const PricingSection: React.FC = () => {
       if (headerRef.current) {
         const rect = headerRef.current.getBoundingClientRect();
         const isVisible = rect.top >= 0 && rect.top < window.innerHeight * 0.75;
-        if (isVisible && !headerRef.current.classList.contains('animate')) {
-          headerRef.current.classList.add('animate');
+        if (isVisible && !headerRef.current.classList.contains("animate")) {
+          headerRef.current.classList.add("animate");
         }
       }
 
@@ -66,19 +74,20 @@ const PricingSection: React.FC = () => {
       cardRefs.current.forEach((ref, index) => {
         if (ref) {
           const rect = ref.getBoundingClientRect();
-          const isVisible = rect.top >= 0 && rect.top < window.innerHeight * 0.75;
-          if (isVisible && !ref.classList.contains('animate')) {
+          const isVisible =
+            rect.top >= 0 && rect.top < window.innerHeight * 0.75;
+          if (isVisible && !ref.classList.contains("animate")) {
             setTimeout(() => {
-              ref.classList.add('animate');
-            }, index * 150); 
+              ref.classList.add("animate");
+            }, index * 150);
           }
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Add animation styles
@@ -140,10 +149,13 @@ const PricingSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b to-blue-950 from-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative" id= "pricing">
+    <section
+      className="min-h-screen bg-gradient-to-b to-blue-950 from-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative"
+      id="pricing"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div 
+        <div
           ref={headerRef}
           className="pricing-header flex flex-col lg:flex-row lg:justify-between lg:items-start mb-12 sm:mb-16 lg:mb-20 gap-6 sm:gap-8"
         >
@@ -152,7 +164,8 @@ const PricingSection: React.FC = () => {
               PRICING PLANS
             </h2>
             <p className="text-gray-400 text-sm sm:text-base lg:text-lg xl:text-xl max-w-xl lg:max-w-2xl leading-relaxed">
-              Contact us for custom pricing tailored to your unique requirements. We offer flexible solutions for all your needs.
+              Contact us for custom pricing tailored to your unique
+              requirements. We offer flexible solutions for all your needs.
             </p>
           </div>
 
@@ -160,8 +173,18 @@ const PricingSection: React.FC = () => {
           <div className="flex-shrink-0 lg:mt-4">
             <button className="bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 group text-sm sm:text-base">
               Get Custom Quote
-              <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           </div>
@@ -172,11 +195,13 @@ const PricingSection: React.FC = () => {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              ref={el => { cardRefs.current[index] = el; }}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
               className={`pricing-card relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:scale-[1.02] sm:hover:scale-105 hover:bg-white/10 group ${
-                pkg.popular 
-                  ? 'ring-1 sm:ring-2 ring-white/20 shadow-xl sm:shadow-2xl shadow-white/10' 
-                  : 'hover:border-white/20'
+                pkg.popular
+                  ? "ring-1 sm:ring-2 ring-white/20 shadow-xl sm:shadow-2xl shadow-white/10"
+                  : "hover:border-white/20"
               }`}
             >
               {/* Popular Badge */}
@@ -198,7 +223,9 @@ const PricingSection: React.FC = () => {
                     {pkg.price}
                   </span>
                   {pkg.price !== "Custom" && (
-                    <span className="text-gray-400 text-sm sm:text-base lg:text-lg ml-1">/project</span>
+                    <span className="text-gray-400 text-sm sm:text-base lg:text-lg ml-1">
+                      /project
+                    </span>
                   )}
                 </div>
                 <p className="text-gray-300 text-xs sm:text-sm leading-relaxed px-2">
@@ -209,7 +236,10 @@ const PricingSection: React.FC = () => {
               {/* Features List */}
               <div className="space-y-2.5 sm:space-y-3 lg:space-y-4 mb-6 sm:mb-8">
                 {pkg.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-start gap-2.5 sm:gap-3">
+                  <div
+                    key={featureIndex}
+                    className="flex items-start gap-2.5 sm:gap-3"
+                  >
                     <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white flex items-center justify-center mt-0.5">
                       <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-black" />
                     </div>
