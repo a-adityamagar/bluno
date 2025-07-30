@@ -207,7 +207,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center">
             <p className="text-gray-400 text-sm tracking-wide hover:text-gray-300 transition-colors duration-300">
-              © {new Date().getFullYear()} BLUNO TECH. All rights reserved.
+              © {new Date().getFullYear()}BLUNO TECH. All rights reserved.
             </p>
           </div>
         </div>
