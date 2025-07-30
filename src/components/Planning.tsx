@@ -1,14 +1,22 @@
-import React, { useEffect, useRef } from "react";
+// src/components/Planning.tsx
+import React, { useEffect, useRef, useContext } from "react";
 import { Check } from "lucide-react";
+import { RegionContext } from "../context/regionContext";
 
 const PricingSection: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { region } = useContext(RegionContext);
 
+  // Define base prices and region-specific overrides
   const packages = [
     {
       name: "Foundational Package",
-      price: "$499",
+      price: {
+        global: "$499",
+        india: "₹35000",
+        nepal: "NPR 30000", 
+      },
       description: "Perfect for small businesses getting started",
       features: [
         "1-6 static pages (Home, About, Services, Contact)",
@@ -24,7 +32,11 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "Business Boost",
-      price: "$899",
+      price: {
+        global: "$899",
+        india: "₹55000", // Approx. 4500 INR converted
+        nepal: "NPR 45000", // Approx. 9000 NPR converted
+      },
       description: "Complete solution for growing businesses",
       features: [
         "Up to 8-15 pages",
@@ -42,7 +54,11 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "Personal Brand Kit",
-      price: "Custom",
+      price: {
+        global: "Custom",
+        india: "Custom",
+        nepal: "Custom",
+      },
       description: "Tailored for professionals and creators",
       features: [
         "Website audit",
@@ -53,7 +69,6 @@ const PricingSection: React.FC = () => {
         "Advanced Search Engine Optimization",
         "3-4 rounds of revisions",
         "Training session for CMS(Content Management System) usage",
-
       ],
     },
   ];
@@ -220,9 +235,9 @@ const PricingSection: React.FC = () => {
                 </h3>
                 <div className="mb-2 sm:mb-3 lg:mb-4">
                   <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                    {pkg.price}
+                    {pkg.price[region]}
                   </span>
-                  {pkg.price !== "Custom" && (
+                  {pkg.price[region] !== "Custom" && (
                     <span className="text-gray-400 text-sm sm:text-base lg:text-lg ml-1">
                       /project
                     </span>

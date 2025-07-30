@@ -1,3 +1,6 @@
+// src/App.tsx
+import { BrowserRouter as Router } from 'react-router-dom';
+import RegionProvider from './context/regionContext';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/Services';
@@ -9,20 +12,23 @@ import Contact from './components/Contactform';
 
 function App() {
   return (
-    <div className="relative min-h-screen font-['Inter',sans-serif] overflow-x-hidden">
-     
-      {/* Navigation */}
-      <Navigation />
-      
-      {/* Hero Section */}
-      <HeroSection />
-      <ServicesSection/>
-      <FAQ/>
-      <Testimonial/>
-      <PricingSection/>
-      <Contact/>
-      <Footer/>
-    </div>
+    <RegionProvider>
+      <Router>
+        <div className="relative min-h-screen font-['Inter',sans-serif] overflow-x-hidden">
+          {/* Navigation */}
+          <Navigation />
+          
+          {/* Hero Section */}
+          <HeroSection />
+          <ServicesSection />
+          <FAQ />
+          <Testimonial />
+          <PricingSection />
+          <Contact />
+          <Footer />
+        </div>
+      </Router>
+    </RegionProvider>
   );
 }
 
