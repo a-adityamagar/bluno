@@ -1,5 +1,6 @@
 // src/components/WhyChooseUs.tsx
 import React, { useEffect, useRef } from "react";
+import { Calendar, Search, Laptop, Rocket } from "lucide-react";
 
 const WhyChooseUs: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -107,7 +108,7 @@ const WhyChooseUs: React.FC = () => {
 
   const features = [
     {
-      icon: "📋",
+      icon: <Calendar className="w-9 h-9 text-black" />,
       title: "Flexible Development",
       description: "We offer flexible development options that fit your business timeline. Whether you need rapid prototyping, custom solutions, or enterprise-level applications.",
       bgColor: "bg-gray-900/50 border border-gray-800 hover:border-gray-700",
@@ -115,7 +116,7 @@ const WhyChooseUs: React.FC = () => {
       buttonStyle: "bg-white text-black hover:bg-gray-100"
     },
     {
-      icon: "🔍",
+      icon: <Search className="w-9 h-9 text-black" />,
       title: "Personalized Solutions",
       description: "We understand that every business is unique. Our personalized web solutions are tailored to your specific requirements and goals.",
       bgColor: "bg-gray-900/50 border border-gray-800 hover:border-gray-700",
@@ -123,7 +124,7 @@ const WhyChooseUs: React.FC = () => {
       buttonStyle: "bg-white text-black hover:bg-gray-100"
     },
     {
-      icon: "💻",
+      icon: <Laptop className="w-9 h-9 text-black" />,
       title: "Expert Developers",
       description: "Our team of certified and experienced developers is dedicated to delivering cutting-edge web solutions that drive your business forward.",
       bgColor: "bg-gray-900/50 border border-gray-800 hover:border-gray-700",
@@ -131,7 +132,7 @@ const WhyChooseUs: React.FC = () => {
       buttonStyle: "bg-white text-black hover:bg-gray-100"
     },
     {
-      icon: "🚀",
+      icon: <Rocket className="w-9 h-9 text-black" />,
       title: "Comprehensive Tech Approach",
       description: "Our services go beyond web development. We offer SEO optimization, CMS integration, and complete digital transformation solutions.",
       bgColor: "bg-gray-900/50 border border-gray-800 hover:border-gray-700",
@@ -186,7 +187,7 @@ const WhyChooseUs: React.FC = () => {
               key={index}
               className={`feature-card ${feature.bgColor} ${feature.textColor} p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300`}
             >
-              <div className="text-4xl sm:text-5xl mb-4 sm:mb-6">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6">
                 {feature.icon}
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 leading-tight">
