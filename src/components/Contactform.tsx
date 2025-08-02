@@ -176,7 +176,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen bg-gradient-to-b from-blue-950 to-black text-white overflow-hidden"
+      className="relative min-h-screen bg-black text-white overflow-hidden"
     >
       <div className="flex min-h-screen flex-col md:flex-row">
         {/* Left Side - Let's Get in Touch */}

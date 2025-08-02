@@ -110,7 +110,7 @@ const FAQ = () => {
 
   return (
     <section
-      className="relative min-h-screen bg-gradient-to-b from-blue-950 to-black  text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-black to-blue-950  text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
       id="faq"
     >
       {/* Background decorative elements */}

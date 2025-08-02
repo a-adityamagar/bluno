@@ -9,6 +9,7 @@ import FAQ from './components/Faq';
 import Testimonial from './components/Testimonials';
 import Footer from './components/Footer';
 import Contact from './components/Contactform';
+import Whyus from './components/Whyus';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <HeroSection />
           <ServicesSection />
           <PricingSection />
+          <Whyus/>
           <FAQ />
           <Testimonial />
           <Contact />
