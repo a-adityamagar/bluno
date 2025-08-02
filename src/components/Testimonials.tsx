@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import startup from "../assets/startup.png";
 import sbipl from "../assets/SBIPL.png";
 import gurkha from "../assets/gurkha.png";
+import santosh from "../assets/santosh.png";
 
 const Testimonial = () => {
   const testimonials = [
@@ -25,11 +26,20 @@ const Testimonial = () => {
     {
       id: 3,
       quote:
+        "Working with Bluno Tech Team was amazing! Their expertise built a sleek landing page and contact form flawlessly as per requirement.",
+      author: "Santosh",
+      title: "Owner of The Santosh Furnishing",
+      logo: santosh,
+    },
+    {
+      id: 4,
+      quote:
         "Collaborating with Bluno Tech Team has been a game-changer. Their relentless drive for quality crafts outstanding solutions for us.",
       author: "Arjun Satyal",
       title: "Owner of The GUrkha Khukuri",
       logo: gurkha,
     },
+    
   ];
 
   // Duplicate testimonials for infinite loop
