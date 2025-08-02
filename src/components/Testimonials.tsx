@@ -198,7 +198,7 @@ const Testimonial = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-gradient-to-b to-black from-blue-950 text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-black to-blue-950  text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
       id="testimonials"
     >
       {/* Background decorative elements */}

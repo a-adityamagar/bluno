@@ -22,10 +22,10 @@ function App() {
           {/* Hero Section */}
           <HeroSection />
           <ServicesSection />
-          <PricingSection />
-          <Whyus/>
-          <FAQ />
           <Testimonial />
+          <Whyus/>
+          <PricingSection />
+          <FAQ />
           <Contact />
           <Footer />
         </div>
