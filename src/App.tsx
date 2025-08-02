@@ -22,8 +22,8 @@ function App() {
           {/* Hero Section */}
           <HeroSection />
           <ServicesSection />
-          <Testimonial />
           <Whyus/>
+          <Testimonial />
           <PricingSection />
           <FAQ />
           <Contact />
