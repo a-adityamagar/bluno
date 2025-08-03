@@ -1,9 +1,7 @@
 // src/components/Planning.tsx
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { Check } from "lucide-react";
-
-// Mock RegionContext for demonstration
-const RegionContext = React.createContext({ region: "nepal" });
+import { RegionContext } from "../context/regionContext"; 
 
 const PricingSection: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -26,7 +24,7 @@ const PricingSection: React.FC = () => {
         "Responsive design (mobile-friendly)",
         "Basic contact form",
         "Google Map integration",
-        "Domain registration ( .com etc. at market rate)",
+        "Domain registration (.com etc. at market rate)",
         "Basic web hosting (e.g., 500MB) for 1 year",
         "Basic SEO setup (title tags, meta descriptions)",
         "1-2 rounds of revisions",
@@ -51,7 +49,7 @@ const PricingSection: React.FC = () => {
         "Basic analytics setup (Google Analytics)",
         "Basic on-page SEO optimization",
         "3-4 rounds of revisions",
-        "Short training session for CMS(Content Management System) usage",
+        "Short training session for CMS usage",
       ],
       popular: true,
     },
@@ -68,10 +66,10 @@ const PricingSection: React.FC = () => {
         "Portfolio for devs, creators, and freelancers",
         "Resume + case studies + contact form",
         "Clean, fast, and shareable layout",
-        "Advanced ai chatbot for instant support",
+        "Advanced AI chatbot for instant support",
         "Advanced Search Engine Optimization",
         "3-4 rounds of revisions",
-        "Training session for CMS(Content Management System) usage",
+        "Training session for CMS usage",
       ],
     },
   ];
@@ -93,7 +91,7 @@ const PricingSection: React.FC = () => {
         "Meta tags optimization",
         "Google My Business setup",
         "Basic local SEO setup",
-        "Basic techincal SEO",
+        "Basic technical SEO",
         "Existing blog post update",
         "Monthly performance report",
       ],
